@@ -1,26 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <MyCustomComponent class="mainfooter"></MyCustomComponent>
+    <GlavniyDivSite></GlavniyDivSite>
+    <UslugiDivIndex></UslugiDivIndex>
+    <RabotaPoObject></RabotaPoObject>
+    
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MyCustomComponent from './components/MyCustomComponent.vue';
+import GlavniyDivSite from './components/GlavniyDivSite.vue';
+import UslugiDivIndex from './components/UslugiDivIndex.vue';
+import RabotaPoObject from './components/RabotaPoObject.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MyCustomComponent,
+    GlavniyDivSite,
+    UslugiDivIndex,
+    RabotaPoObject,
+
   }
 }
 </script>
 
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
