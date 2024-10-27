@@ -77,6 +77,7 @@ justify-content: center;align-items: center; margin: 0 auto; justify-items: cent
 }
 .divkont{
     display: flex; position: relative; overflow: hidden;
+    
 }
 .divkont img{
     display: flex;

@@ -4,6 +4,7 @@
     <GlavniyDivSite></GlavniyDivSite>
     <UslugiDivIndex></UslugiDivIndex>
     <RabotaPoObject></RabotaPoObject>
+    <BottomSvyaz></BottomSvyaz>
     
   </div>
 </template>
@@ -13,6 +14,7 @@ import MyCustomComponent from './components/MyCustomComponent.vue';
 import GlavniyDivSite from './components/GlavniyDivSite.vue';
 import UslugiDivIndex from './components/UslugiDivIndex.vue';
 import RabotaPoObject from './components/RabotaPoObject.vue';
+import BottomSvyaz from './components/BottomSvyaz.vue';
 
 export default {
   name: 'App',
@@ -21,6 +23,7 @@ export default {
     GlavniyDivSite,
     UslugiDivIndex,
     RabotaPoObject,
+    BottomSvyaz,
 
   }
 }
@@ -28,5 +31,7 @@ export default {
 
 
 <style>
-
+#app{
+  /* background-color: rgb(212, 212, 212); */
+}
 </style>

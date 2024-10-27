@@ -1,5 +1,5 @@
 <template>
-    <div class="all1">
+    <div class="all1" id="servicesSection">
       <h1 style="display: flex; justify-content: center; align-items: center;  ">Услуги</h1>
       <div class="div_cont" >
         <div v-for="(item, index) in itemsWithButton" :key="index" class="grid_item" >
@@ -13,6 +13,8 @@
   </template>
   
   <script>
+import  EventBus  from '@/utils/eventBus';
+
   export default {
     data() {
       return {
@@ -32,10 +34,25 @@
     computed:{
         itemsWithButton(){
             return this.items.map(item => ({
-                ...item, button_podrob: item.button_podrob || 'Подбробнее'
+                ...item, button_podrob: item.button_podrob || 'Подробнее'
             }))
         }
-    }  
+    },
+    mounted(){
+      EventBus.on('scrollToSection', this.handleScrollToSection);
+    },
+    unmounted(){
+      EventBus.off('scrollToSection', this.handleScrollToSection);
+    },
+    methods:{
+      handleScrollToSection(sectionId1) {
+        const section = document.getElementById(sectionId1);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth'});
+        }
+      }
+    },
+      
   }
   </script>
   

@@ -3,15 +3,31 @@
    <div class="upfooter">
       <img :src="text.logo" class="logo">
       <p class="ptext"> ССГ </p>
-      <a v-for="(value, key) in filteredText" :key="key"
+      <a class="A_cont_main" v-for="(value, key) in filteredText" :key="key"
       :class="{Napisat: key === 'napis'}">
          {{ value }} </a>
+      <a class="A_cont_mobile" @click="toggleMenu">
+        <div>&#8226;</div>
+        <div>&#8226;</div>
+        <div>&#8226;</div>
+      </a>
    </div>
+
+  <div v-if="isMenuOpen" class="menu_cont">
+    <ul>
+      <li @click="s">Главная</li>
+      <li @click="d">О нас</li>
+      <li @click="scrollToSection('servicesSection')" >Услуги</li>
+    </ul>
+  </div>
+
    
 </div>
   </template>
   
   <script>
+import  EventBus  from '@/utils/eventBus';
+
 
   export default {
     data() {
@@ -23,7 +39,7 @@
         usl: 'Услуги',
         napis: 'Написать нам'
        },
-
+       isMenuOpen: false,
       };
     },
     computed: {
@@ -35,7 +51,17 @@
         return obj;
       }, {});
   }
-}
+},
+    methods:{
+      toggleMenu(){
+        this.isMenuOpen = !this.isMenuOpen;
+      },
+      scrollToSection(sectionId) {
+      EventBus.emit('scrollToSection', sectionId);
+
+      this.isMenuOpen = false;
+      }
+    }
   };
   </script>
   
@@ -62,20 +88,62 @@
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 300px;
 }
-.upfooter a{
+.A_cont_main{
   display: flex; justify-content: center;align-items: center; text-align: center;
   color: white;
   cursor: pointer;
   width:120px;
-  
 }
-.upfooter a:hover{
+.A_cont_main:hover, .A_cont_mobile:hover{
   color: rgba(207, 149, 24, 0.644);
 }
+.A_cont_mobile{
+  display: none; color: white;cursor: pointer;
+  font-size: 30px;
+  justify-content: left;align-items: center; justify-items: left; 
+  width: 100%;
+}
 .Napisat{
-  display: flex; justify-content: center; align-items: center;
+  display: flex; justify-content: center; align-items: center; 
   background-color: red;border-radius: 30px; height: 40px; width: 120px;
   
+}
+
+.menu_cont{
+  display: flex;  z-index: 10;
+  position: fixed; color: white;
+  background-color: black;
+  width: 150px;
+  font-size: 20px;
+}
+.menu_cont ul{
+  list-style: none;
+  margin: 0; padding: 0;
+  width: 100%;
+}
+.menu_cont li{
+  display: flex;
+  padding: 13px;
+  width: 100%; justify-content: left;
+  cursor: pointer;
+}
+.menu_cont li:hover{
+  color: rgba(207, 149, 24, 0.644);
+}
+
+
+
+@media (max-width: 850px){
+  .A_cont_main{
+    display: none;
+  }
+  .A_cont_mobile{
+    display: flex; margin-left: 20px;
+  }
+  .ptext{
+    left:calc(50% - 70px); 
+
+  }
 }
   </style>
   
