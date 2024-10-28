@@ -4,7 +4,9 @@
       <img :src="text.logo" class="logo">
       <p class="ptext"> ССГ </p>
       <a class="A_cont_main" v-for="(value, key) in filteredText" :key="key"
-      :class="{Napisat: key === 'napis'}">
+      :class="{Napisat: key === 'napis'}"
+      @click="key === 'napis' && (Ismodal2 = !Ismodal2)"
+      >
          {{ value }} </a>
       <a class="A_cont_mobile" @click="toggleMenu">
         <div>&#8226;</div>
@@ -21,15 +23,20 @@
     </ul>
   </div>
 
-   
+  <ModalDanieOtrpavka v-if="Ismodal2" @close="closeFirstModal" @close2="Ismodal2 = false"></ModalDanieOtrpavka> 
+  <ModalOknoOtravit v-if="Ismodal3" @close="Ismodal3 = false"></ModalOknoOtravit>
+
 </div>
   </template>
   
   <script>
 import  EventBus  from '@/utils/eventBus';
+import ModalDanieOtrpavka from './ModalDanieOtrpavka.vue';
+import ModalOknoOtravit from './ModalOknoOtravit.vue';
 
 
   export default {
+    components:{ModalDanieOtrpavka, ModalOknoOtravit},
     data() {
       return {
        text:{
@@ -40,6 +47,9 @@ import  EventBus  from '@/utils/eventBus';
         napis: 'Написать нам'
        },
        isMenuOpen: false,
+
+       Ismodal2: false,
+       Ismodal3: false,
       };
     },
     computed: {
@@ -60,6 +70,10 @@ import  EventBus  from '@/utils/eventBus';
       EventBus.emit('scrollToSection', sectionId);
 
       this.isMenuOpen = false;
+      },
+      closeFirstModal(){
+        this.Ismodal2 = false;
+        this.Ismodal3 = true;
       }
     }
   };

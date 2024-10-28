@@ -38,7 +38,8 @@
 
                 <p class="errormess" v-if="chekValue" >  {{ chekValue }} </p>
                 <!-- <span class="" v-if="chekValue" > {{ chekValue }} </span> -->
-                <button class="buttsub"  @click="submitForm"> Отправить </button>
+                <button class="buttsub"  @click="submitForm "> Отправить </button>
+                <ModalOknoOtravit v-if="Ismodal" @close="Ismodal = false"></ModalOknoOtravit>
             </div>
             
         </div>
@@ -47,7 +48,10 @@
 </template>
 
 <script>
+import ModalOknoOtravit from './ModalOknoOtravit.vue';
+
 export default {
+    components:{ModalOknoOtravit },
     data(){
         return{
             formData:{
@@ -61,6 +65,8 @@ export default {
             message3: '',
             chekValue:'',
             checkbox: false,
+
+            Ismodal: false,
         }
     },
    methods:{
@@ -86,6 +92,8 @@ export default {
         this.message2 = '';
         this.message3 = '';
         this.chekValue = '';
+
+        this.Ismodal = true;
        }
 
       

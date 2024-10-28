@@ -17,16 +17,26 @@
             </div>
         </div>
 
-        <button class="submitbut" @click="submitbut">Оставить заявку!</button>
+        <button class="submitbut" @click="Ismodal2 = !Ismodal2">Оставить заявку!</button>
+        <ModalDanieOtrpavka v-if="Ismodal2" @close="closeFirstModal" @close2="Ismodal2 = false"></ModalDanieOtrpavka>
 
+        <ModalOknoOtravit v-if="Ismodal3" @close="Ismodal3 = false"></ModalOknoOtravit>
     </div>
 </div>
+
+    
+
+    
 </template>
 
 <script>
+import ModalDanieOtrpavka from './ModalDanieOtrpavka.vue';
+import ModalOknoOtravit from './ModalOknoOtravit.vue';
+
 
 
 export default {
+    components:{ModalDanieOtrpavka, ModalOknoOtravit },
     data(){
         return{
             items:[
@@ -43,6 +53,9 @@ export default {
                 require('../assets/img/shutterstock_226824577.webp'),
             ],
             currentImageIndex: 0,
+
+            Ismodal2: false,
+            Ismodal3: false, 
         }
         
     },
@@ -60,13 +73,18 @@ export default {
     },
     methods: {
         submitbut(){
-            alert('успешно')
+            
         },
         startImageSlider(){
             setInterval(() =>{
                 this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
             }, 7000);
         },
+        closeFirstModal(){
+            this.Ismodal2 = false;
+            this.Ismodal3 = true;
+        }
+
     }
 }
 </script>

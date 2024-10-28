@@ -5,9 +5,11 @@
     <UslugiDivIndex></UslugiDivIndex>
     <RabotaPoObject></RabotaPoObject>
     <BottomSvyaz></BottomSvyaz>
-    
+    <FooterDivSite></FooterDivSite>
   </div>
 </template>
+
+
 
 <script>
 import MyCustomComponent from './components/MyCustomComponent.vue';
@@ -15,6 +17,7 @@ import GlavniyDivSite from './components/GlavniyDivSite.vue';
 import UslugiDivIndex from './components/UslugiDivIndex.vue';
 import RabotaPoObject from './components/RabotaPoObject.vue';
 import BottomSvyaz from './components/BottomSvyaz.vue';
+import FooterDivSite from './components/FooterDivSite.vue';
 
 export default {
   name: 'App',
@@ -24,6 +27,7 @@ export default {
     UslugiDivIndex,
     RabotaPoObject,
     BottomSvyaz,
+    FooterDivSite,
 
   }
 }
