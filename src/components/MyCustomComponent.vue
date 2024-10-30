@@ -3,16 +3,27 @@
    <div class="upfooter">
       <img :src="text.logo" class="logo">
       <p class="ptext"> ССГ </p>
-      <a class="A_cont_main" v-for="(value, key) in filteredText" :key="key"
+      <a
+      class="A_cont_main" 
+      v-for="(item, key) in text" 
+      :key="key"
       :class="{Napisat: key === 'napis'}"
-      @click="key === 'napis' && (Ismodal2 = !Ismodal2)"
+      
+
+      @click="handleClick(key)"
+
+      :to="key === 'glav' ? '/' : (key === 'onas' ? '/about' : item.path)"
+
+
       >
-         {{ value }} </a>
+         {{ item }} </a>
       <a class="A_cont_mobile" @click="toggleMenu">
         <div>&#8226;</div>
         <div>&#8226;</div>
         <div>&#8226;</div>
       </a>
+
+      <!-- <router-Link to="/about" class="asd">Главная</router-Link> -->
    </div>
 
   <div v-if="isMenuOpen" class="menu_cont">
@@ -40,27 +51,18 @@ import ModalOknoOtravit from './ModalOknoOtravit.vue';
     data() {
       return {
        text:{
-        logo: require('../assets/img/logo123123.png'),
         glav: 'Главная',
         onas: 'О нас',
         usl: 'Услуги',
-        napis: 'Написать нам'
-       },
+        napis: 'Написать нам',
+        },
        isMenuOpen: false,
-
        Ismodal2: false,
        Ismodal3: false,
       };
     },
     computed: {
-  filteredText() {
-    return Object.entries(this.text)
-      .filter(([key]) => key !== 'logo')
-      .reduce((obj, [key, value]) => {
-        obj[key] = value;
-        return obj;
-      }, {});
-  }
+  
 },
     methods:{
       toggleMenu(){
@@ -74,6 +76,20 @@ import ModalOknoOtravit from './ModalOknoOtravit.vue';
       closeFirstModal(){
         this.Ismodal2 = false;
         this.Ismodal3 = true;
+      },
+      handleClick(key){
+        if(key === 'napis'){
+          this.Ismodal2 = !this.Ismodal2;
+        }
+
+
+        if(key === 'onas'){
+          this.$router.push('/about')
+        }
+
+        if(key === 'glav'){
+          this.$router.push('/')
+        }
       }
     }
   };

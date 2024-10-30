@@ -12,9 +12,13 @@ export default {
         }
         
     },
+    
    
 }
 </script  >
 
 <style scoped >
+.asd{
+    cursor: pointer;
+}
 </style>

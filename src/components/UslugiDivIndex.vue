@@ -2,8 +2,9 @@
     <div class="all1" id="servicesSection">
       <h1 style="display: flex; justify-content: center; align-items: center;  ">Услуги</h1>
       <div class="div_cont" >
-        <div v-for="(item, index) in itemsWithButton" :key="index" class="grid_item" >
-          
+        <div v-for="(item, index) in itemsWithButton" :key="index" class="grid_item" 
+        @click="clickimage(index)"
+        >
           <div class="centered_text">{{ item.text }}</div>
           <a class="button_podrob">{{ item.button_podrob }}</a>
           <img :src="item.img" alt="icon" class="icon" />
@@ -50,8 +51,39 @@ import  EventBus  from '@/utils/eventBus';
         if (section) {
           section.scrollIntoView({ behavior: 'smooth'});
         }
+      },
+      // Ссылки в услугах
+      clickimage(index){
+      if(index === 0){
+        this.$router.push('/NVK')
       }
+      if(index === 1){
+        this.$router.push('/otopl')
+      }
+      if(index === 2){
+        this.$router.push('/telp')
+      }
+      if(index === 3){
+        this.$router.push('/kond')
+      }
+      if(index === 4){
+        this.$router.push('/metal')
+      }
+      if(index === 5){
+        this.$router.push('/monolit')
+      }
+      if(index === 6){
+        this.$router.push('/krovel')
+      }
+      if(index === 7){
+        this.$router.push('/elec')
+      }
+      if(index === 8){
+        this.$router.push('/blagous')
+      }
+    }
     },
+    
       
   }
   </script>
@@ -74,6 +106,7 @@ import  EventBus  from '@/utils/eventBus';
     width: auto; height: auto;
     flex: 1 1 30%; 
     overflow: hidden; 
+    cursor: pointer;
   }
   .grid_item:hover .icon,
   .grid_item:hover .centered_text {
