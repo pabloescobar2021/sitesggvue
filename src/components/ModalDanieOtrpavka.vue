@@ -67,7 +67,7 @@ export default {
 <style scoped >
 .div_modal{
   position: fixed;
-  z-index: 9998;
+  z-index: 99928;
   top: 0;
   left: 0;
   width: 100%;
@@ -85,6 +85,7 @@ export default {
     background-color: rgba(255, 255, 255, 0.916);
     width: 50%; max-height: 500px; height: 400px;
     border-radius: 20px;
+    z-index: 232323;
 }
 .div_mes{
     display:flex; flex-flow: column;
@@ -92,13 +93,13 @@ export default {
     position: relative;
     top: 40%;transform: translateY(-50%);
     /* left: 50%;transform: translateX(-50%); */
-    width: 100%;
+    width: 100%;z-index: 232323;
 }
 .a_but{
     display: flex; position: absolute;
     justify-content: center; align-items: center;
     right: 5px;top: 5px;
-    cursor: pointer;
+    cursor: pointer;z-index: 232323;
 }
 .button{
     display: flex; position: absolute;

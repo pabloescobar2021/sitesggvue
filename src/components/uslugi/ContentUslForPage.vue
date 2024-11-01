@@ -1,11 +1,11 @@
 <template>
-<div class="CUFP" >
+<div class="CUFP" :style="CUFPstyle">
 
     <div class="Mcont" v-for="(item,index) in items" 
     :key="index"
     :style="[{ flex: IsWrap ? '1 1 30%' : '1 1 100%'}, Mcontcustomstyle]"
     >
-        <div class="divcontCUFP"
+        <div class="divcontCUFP" :style="divcontCUFP"
         :class="[{ 'special-style': isEven && index === items.length - 1 },
         { 'no-after': disableAfter }]"
         @click="showtext(item, index)"
@@ -18,7 +18,7 @@
             :src="item.photo" >
             <div v-else
             class="divVmestoimg" :style="customStyle">
-            <div class="divVmestoimgtxt2" >{{item.text}}</div>
+            <div :style="divVmestoimgtxt2" class="divVmestoimgtxt2" >{{item.text}}</div>
             <div class="divVmestoimgtxt">{{ item.podr }}</div>
 
             <div class="divVmestoimgtxt2" :style="divVmestoimgtxt3" > {{ item.opis }} </div>
@@ -41,15 +41,32 @@
             
         </div>
     </div>
+
+    
     
 
 </div>
+
+    <div class="contIfNeeded_main" v-if="contIfNeeded" style="display: flex;z-index: 1;" >
+        <div class="contIfNeeded_div" v-for="(item,index) in imgones"
+        :key="index"
+        >
+        <img class="contIfNeeded_img" :src="item.img">
+        </div>
+    </div>
+
+
 </template>
 
 <script>
 export default {
     props:{
         items:{
+            type: Array,
+            required: true,
+            default: () => []
+        },
+        imgones:{
             type: Array,
             required: true,
             default: () => []
@@ -67,6 +84,7 @@ export default {
             type: Object,
             default:() => ({}),
         },
+        // all redachim tut
         Mcontcustomstyle:{
             type: Object,
             default:() => ({}),
@@ -75,16 +93,33 @@ export default {
             type: Object,
             default:() => ({}),
         },
+        divVmestoimgtxt2:{
+            type: Object,
+            default:() => ({}),
+        },
+        divcontCUFP:{
+            type: Object,
+            default:() => ({}),
+        },
+        CUFPstyle:{
+            type: Object,
+            default:() => ({}),
+        },
         // Отключение ::after(linear-gradient на фото)
         disableAfter:{
             type: Boolean,
             default: false
+        },
+        contIfNeeded:{
+            type: Boolean,
+            default: false,
         }
     },
   data(){
     return{
         activeIndex: null,
         SelectedIt: null,
+        
         
     }
   },
@@ -132,7 +167,7 @@ export default {
 }
 
 .divcontCUFP{
-    display: flex;
+    display: flex; justify-content: center;align-items: center; margin: 0 auto;
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -186,13 +221,14 @@ export default {
     transition: transform 0.3s ease;
     z-index: 12;
     background-color: rgba(94, 76, 30, 0.922);
-    border: 2px white solid;
+    border: 2px white solid; 
 }
 .divVmestoimgtxt2{
     font-size: 18px; color: white;
     transition: transform 0.3s ease;
 }
 .divVmestoimgtxt{
+    display: flex; position: relative;
     font-size: 18px; color: white;
     background-color: rgb(215, 172, 61);
     cursor: pointer;
@@ -259,6 +295,9 @@ export default {
 }
 
 
+
+
+
 @media (max-width:800px){
     .Mcont{
         flex: 1 1 100%
@@ -267,4 +306,40 @@ export default {
         font-size: 25px;
     }
 }
+
+
+
+
+
+
+.contIfNeeded_main{
+    display: flex;justify-content: center; align-items: center;
+    flex-wrap: wrap;
+    background-color: #d4d4d4;
+    
+}
+.contIfNeeded_div{
+    display: flex;justify-content: center; align-items: center;
+    width: 100%; 
+    margin-top: 50px;
+    padding: 10px;
+    flex: 1 1 30%;
+}
+.contIfNeeded_img{
+    display: flex;justify-content: center;flex: 1 1 50%;
+    width: 100%; height: 300px;object-fit: cover;
+    transition: transform 0.3s ease;
+    pointer-events:fill;
+}
+.contIfNeeded_img:hover{
+    transform: scale(0.98);
+}
+
+
+
+
+
+
+
+
 </style>

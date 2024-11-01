@@ -107,7 +107,7 @@
         width: 100%;
         min-height: 500px;max-height: 700px;
         height: 500px;
-        z-index: 2;
+        z-index: 222;
         overflow: hidden;
         display:flow-root;
         justify-content: center;align-items: baseline;
