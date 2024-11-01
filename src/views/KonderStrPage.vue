@@ -31,11 +31,13 @@ export default {
   data(){
     return{
       parentItems:[
-        {photo: require('@/assets/img/vodosikanal.webp'), text: 'Водоснабжение и канализация'},
-        {photo: require('@/assets/img/2492af3d849311ef9c9c46f041e3c814-transformed.png'), text: 'Дождевая канализация'},
-        {photo: require('@/assets/img/308_original.webp'), text: 'Дренажные системы'},
-        {photo: require('@/assets/img/nasos-dlya-perekachki-vody-4.jpg'), text: 'Канализационные насосные станции'},
-        {photo: require('@/assets/img/c4aaa3537441487ca58363c88a97a526.png'), text: 'Водопроводная насосная станция'},
+        {photo: require('@/assets/img/fdc281ff7f7811ef95650ad361d3e203.png'), 
+        text: 'Кондиционирование'},
+        {photo: require('@/assets/img/400612027f7911ef8c41e64959f934a7.png'), 
+        text: 'Вентиляция'},
+        {photo: require('@/assets/img/8c1ea3a37f7911ef960f160f3f05b604.png'), 
+        text: 'Пожаротушение'},
+        
 
       ]
     }

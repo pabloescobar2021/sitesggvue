@@ -2,8 +2,13 @@
     <div>
         <UslugiGlavniyDiv title="НВК"></UslugiGlavniyDiv>
 
-        <ContentUslForPage :items="parentItems"></ContentUslForPage>
+        <ContentUslForPage 
+        :items="parentItems"
+        ></ContentUslForPage>
         <RabotaPoObject></RabotaPoObject>
+        <AfterUslugiDiv
+        :items2="afteruslfuv"
+        ></AfterUslugiDiv>
         <BottomSvyaz></BottomSvyaz>
         <FooterDivSite></FooterDivSite>  
       </div>
@@ -15,6 +20,7 @@ import RabotaPoObject from '@/components/RabotaPoObject.vue';
 import BottomSvyaz from '@/components/BottomSvyaz.vue';
 import FooterDivSite from '@/components/FooterDivSite.vue';
 import ContentUslForPage from '@/components/uslugi/ContentUslForPage.vue';
+import AfterUslugiDiv from '@/components/uslugi/AfterUslugiDiv.vue';
 
 
 
@@ -26,6 +32,7 @@ export default {
     BottomSvyaz,
     FooterDivSite,
     ContentUslForPage,
+    AfterUslugiDiv,
 
   },
   data(){
@@ -37,6 +44,14 @@ export default {
         {photo: require('@/assets/img/nasos-dlya-perekachki-vody-4.jpg'), text: 'Канализационные насосные станции'},
         {photo: require('@/assets/img/c4aaa3537441487ca58363c88a97a526.png'), text: 'Водопроводная насосная станция'},
 
+      ],
+      afteruslfuv:[
+        {t1: 'Опыт и профессионализм', t2:'Многолетний опыт в проектировании и монтаже наружных сетей водоснабжения и канализации. Гарантирия качественной и своевременой реализации работ.'},
+        {t1: 'Использование современных технологий', t2:'Мы применяем передовые решения и оборудование, что позволяет минимизировать эксплуатационные затраты и продлить срок службы инженерных систем.'},
+        {t1: 'Комплексный подход', t2:'Мы предлагаем полный цикл услуг — от разработки проектной документации до сдачи объекта "под ключ". Это позволяет обеспечить согласованность всех процессов и избежать дополнительных затрат.'},
+        {t1: 'Надежность и долговечность', t2:'Мы используем только проверенные материалы высокого качества, которые обеспечивают бесперебойную работу систем на долгие годы.'},
+        {t1: 'Индивидуальный подход', t2:'Для каждого клиента мы разрабатываем уникальные инженерные решения с учётом всех особенностей объекта и пожеланий заказчика.'},
+        {t1: 'Гарантийное обслуживание', t2:'Мы предоставляем гарантию на все выполненные работы и при необходимости оперативно устраняем любые возможные проблемы.'},
       ]
     }
   }

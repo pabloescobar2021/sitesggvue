@@ -4,6 +4,9 @@
 
         <ContentUslForPage :items="parentItems"></ContentUslForPage>
         <RabotaPoObject></RabotaPoObject>
+        <AfterUslugiDiv
+        :items2="afteruslfuv"
+        ></AfterUslugiDiv>
         <BottomSvyaz></BottomSvyaz>
         <FooterDivSite></FooterDivSite>  
       </div>
@@ -15,6 +18,7 @@ import RabotaPoObject from '@/components/RabotaPoObject.vue';
 import BottomSvyaz from '@/components/BottomSvyaz.vue';
 import FooterDivSite from '@/components/FooterDivSite.vue';
 import ContentUslForPage from '@/components/uslugi/ContentUslForPage.vue';
+import AfterUslugiDiv from '@/components/uslugi/AfterUslugiDiv.vue';
 
 
 
@@ -26,6 +30,7 @@ export default {
     BottomSvyaz,
     FooterDivSite,
     ContentUslForPage,
+    AfterUslugiDiv,
 
   },
   data(){
@@ -40,31 +45,33 @@ export default {
                 'Монтаж радиаторов и тёплых полов',
                 'Автоматизация отопительных систем',
                 'Обслуживание и ремонт систем отопления'
-          ]
+          ],
+          
         },
         
         {photo: require('@/assets/img/isdsd.webp'), 
-        text: 'Дождевая канализация',
+        text: 'Водоснабжение',
         txt: [
-                'Проектирование и монтаж систем отопления',
-                'Установка котельных и тепловых пунктов',
-                'Монтаж радиаторов и тёплых полов',
-                'Автоматизация отопительных систем',
-                'Обслуживание и ремонт систем отопления'
+                'Проектирование и монтаж систем водоснабжения',
+                'Установка насосных станций и резервуаров',
+                'Монтаж трубопроводов и сантехнических систем',
+                'Водоподготовка и фильтрация',
+                'Обслуживание водоснабжения'
           ]
         },
         {photo: require('@/assets/img/ffsssd.webp'), 
-        text: 'Дренажные системы',
+        text: 'Водоотведение',
         txt: [
-                'Проектирование и монтаж систем отопления',
-                'Установка котельных и тепловых пунктов',
-                'Монтаж радиаторов и тёплых полов',
-                'Автоматизация отопительных систем',
-                'Обслуживание и ремонт систем отопления'
+                'Проектирование систем водоотведения',
+                'Установка канализационных систем',
+                'Очистные сооружения и септики',
+                'Обслуживание и ремонт систем водоотведения',
+                'Прокладка ливневой канализации'
           ]
         },
-
-      ]
+      ].map(item => ({ ...item, podr: 'Подробнее' })),
+      podr: 'Подробнее',
+      
     }
   }
 }

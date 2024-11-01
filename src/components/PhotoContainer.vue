@@ -62,7 +62,7 @@
   };
   </script>
 
-<style>
+<style scoped >
 .divGrid{
 display: grid; grid-template-columns: 50% 50%; width: 100%;
 overflow: hidden;
@@ -130,5 +130,10 @@ justify-content: center;align-items: center; margin: 0 auto; justify-items: cent
     .divGrid2 img{
         height: 350px; object-fit:cover;
     }
+}
+@media (max-width:700px){
+  .div_l, .div_r{
+    display: flex; flex: 1 1 100%
+}
 }
 </style>

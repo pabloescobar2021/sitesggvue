@@ -1,11 +1,11 @@
 <template>
 <div class="all">
-    <div class="div_head image-slider" style="height: auto; min-height: 700px;" >
+    <div class="div_head "  >
 
-        <div class="backgr_blur div_head image-slider" :style="backgroundStyle"></div>
+        <div class=" backgr_blur  " :style="backgroundStyle"></div>
 
         <div class="divP_h2 " >
-        <h2 style="font-size: 30px; color: white; height: 15px;margin-top: 100px;">Инженерно строительная компания ССГ</h2> 
+        <h2 style="">Инженерно строительная компания ССГ</h2> 
         <p style="color: white; " >Россия - Большое Сочи</p>
         
         </div>
@@ -94,10 +94,25 @@ export default {
   font-family: Arial, sans-serif; font-weight: 300; margin-top: 60px; 
 }
 .div_head{
-    /* background-image: linear-gradient(to right, rgb(132, 87, 14)20%, rgba(95, 12, 12, 0.66) 100%);  */
-    background-repeat: no-repeat; 
-    animation: gradientmove 100s ease infinite;  
+    width: 100%;
+    height: 700px;
+    background-position: center;
+    z-index: 1;
+    position: relative;
 }
+.backgr_blur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter:  brightness(50%); /* Размытие только на этом слое */
+    transition: background-image 2s ease-in-out;
+    height: 100%; width: 100%;
+    background-repeat: no-repeat; 
+    animation: gradientmove 100s ease infinite; 
+    background-size: 120% 150%;
+}
+
 @keyframes gradientmove {
     0% {
         background-position: 0% 50%;
@@ -114,15 +129,18 @@ export default {
     display: flex; justify-content: center;align-items: center; text-align: center; flex-flow: column;
     width: 100%; 
 }
+.divP_h2 h2{
+    font-size: 30px; color: white; height: 15px;margin-top: 100px;
+}
 .grid_cont{
     display: grid; justify-content: center;align-items: center; margin: 0 auto;justify-items:center; margin-top: 50px;
     width: 40%;
     grid-template-columns: 1fr 1fr;  grid-template-rows: auto auto;
-    gap: 50px; 
+    gap: 10px; 
 }
 .grid_item{
   background-color: #f0f0f0b3; /* Светлый фон для элементов */
-  padding: 20px; /* Внутренние отступы */
+  padding: 10px; /* Внутренние отступы */
   text-align: center; /* Выравнивание текста по центру */
   font-size: 18px; /* Размер текста */
   border-radius: 15px; /* Закругленные углы */
@@ -153,21 +171,8 @@ export default {
     transform: scale(1.09);
 }
 
-.image-slider {
-  width: 100%;
-  height: 100vh;
-  background-size: 120% 150%;
-  background-position: center;
-  z-index: 1;
-}
-.backgr_blur{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    filter: blur(3px) brightness(50%); /* Размытие только на этом слое */
-    transition: background-image 2s ease-in-out;
-}
+
+
 
 
 @media(max-width:700px) {
@@ -185,6 +190,9 @@ export default {
     }
 }
 @media(max-width:500px){
+    .div_head{
+        height: 700px;
+    }
     .divP_h2 p {
         margin-top: 100px;
     }

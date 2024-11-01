@@ -11,13 +11,15 @@
       
 
       @click="handleClick(key)"
+      @mouseover="showContainer(key)"
+      @mouseleave="startCloseTimer('usl')"
 
       :to="key === 'glav' ? '/' : (key === 'onas' ? '/about' : item.path)"
 
 
       >
          {{ item }} </a>
-      <a class="A_cont_mobile" @click="toggleMenu">
+      <a class="A_cont_mobile" @click="toggleMenu" ref="menuContainer">
         <div>&#8226;</div>
         <div>&#8226;</div>
         <div>&#8226;</div>
@@ -26,13 +28,27 @@
       <!-- <router-Link to="/about" class="asd">Главная</router-Link> -->
    </div>
 
-  <div v-if="isMenuOpen" class="menu_cont">
-    <ul>
-      <li @click="s">Главная</li>
-      <li @click="d">О нас</li>
+  <div v-if="isMenuOpen" class="menu_cont" >
+    <ul >
+      <li @click="MenuButhome('glav')">Главная</li>
+      <li @click="MenuButhome('onas')">О нас</li>
       <li @click="scrollToSection('servicesSection')" >Услуги</li>
     </ul>
   </div>
+
+    <div v-if="isUslpressed" class="menuUslugi"
+    @mouseover="showContainer('usl')"
+    @mouseleave="startCloseTimer('usl')"
+    >
+    <ul>
+      <li v-for="(usluga,index) in uslugi"
+      :key="index"
+      @click="uslclickdata(index)" 
+      class="menuUslugi2" > 
+        {{ usluga }}
+      </li>
+    </ul>
+    </div>
 
   <ModalDanieOtrpavka v-if="Ismodal2" @close="closeFirstModal" @close2="Ismodal2 = false"></ModalDanieOtrpavka> 
   <ModalOknoOtravit v-if="Ismodal3" @close="Ismodal3 = false"></ModalOknoOtravit>
@@ -59,15 +75,40 @@ import ModalOknoOtravit from './ModalOknoOtravit.vue';
        isMenuOpen: false,
        Ismodal2: false,
        Ismodal3: false,
+       isUslpressed:false,
+       closeTimer: null,   
+
+       uslugi:[
+        "НВК",
+        'Отопление, водоснабжение, теплосети',
+        "Теплосети",
+        'Кондиционирование, вентиляция, пожаротушение',
+        'Изготовление любых металл кострукций,',
+        'Монолитное строительно зданий',
+        'Кровельные работы',
+        'Электромонтажные работы',
+        'Благоустройство',
+        ]
       };
     },
     computed: {
   
 },
+    mounted(){
+      document.addEventListener('click', this.toggleMenuClickOutside)
+    },
+    beforeUnmount(){
+      document.addEventListener('click', this.toggleMenuClickOutside)
+    },
     methods:{
       toggleMenu(){
         this.isMenuOpen = !this.isMenuOpen;
       },
+      toggleMenuClickOutside(event){
+        if(this.$refs.menuContainer && !this.$refs.menuContainer.contains(event.target)){
+          this.isMenuOpen = false}
+      },
+
       scrollToSection(sectionId) {
       EventBus.emit('scrollToSection', sectionId);
 
@@ -81,7 +122,10 @@ import ModalOknoOtravit from './ModalOknoOtravit.vue';
         if(key === 'napis'){
           this.Ismodal2 = !this.Ismodal2;
         }
-
+        if(key === 'usl'){
+          this.isUslpressed = !this.isUslpressed;
+          
+        }
 
         if(key === 'onas'){
           this.$router.push('/about')
@@ -90,6 +134,47 @@ import ModalOknoOtravit from './ModalOknoOtravit.vue';
         if(key === 'glav'){
           this.$router.push('/')
         }
+      },
+      showContainer(key){
+        if(key === 'usl'){
+          this.isUslpressed = true;
+          this.cancelCloseTimer(); 
+        } 
+      },
+
+      startCloseTimer(key){
+        if(key === 'usl'){
+          this.closeTimer = setTimeout(() => {
+            this.isUslpressed = false;
+          }, 200);
+        }
+      },
+
+      cancelCloseTimer(){
+        if(this.closeTimer){
+          clearTimeout(this.closeTimer);
+          this.closeTimer = null
+        }
+      },
+      
+
+      // buttons v massive uslugov
+      uslclickdata(index){
+        const routesMap = [
+           '/NVK',  '/otopl', '/telp','/kond','/metal','/monolit','/krovel',
+           '/elec','/blagous',
+      ];
+        const route = routesMap[index];
+        if (route ) {
+          this.$router.push(route);
+          this.isUslpressed = false
+        }
+      },
+
+
+      MenuButhome(any){
+        if(any === 'glav'){this.$router.push('/') }
+        if(any === 'onas'){this.$router.push('/about') }
       }
     }
   };
@@ -161,6 +246,28 @@ import ModalOknoOtravit from './ModalOknoOtravit.vue';
   color: rgba(207, 149, 24, 0.644);
 }
 
+.menuUslugi{
+  display: flex;  z-index: 10;
+  position: fixed; color: white;
+  background-color: black;
+  width: 230px;
+  font-size: 15px;
+  left: 50%;
+}
+.menuUslugi ul{
+  list-style:symbols('s');
+  margin: 0; padding: 0;
+  width: 95%;
+}
+.menuUslugi li{
+  display: grid;
+  padding: 5px;
+  width: 100%; justify-content: left;
+  cursor: pointer;
+}
+.menuUslugi li:hover{
+  color: rgba(207, 149, 24, 0.644);
+}
 
 
 @media (max-width: 850px){
