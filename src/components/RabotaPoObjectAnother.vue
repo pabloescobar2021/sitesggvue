@@ -7,13 +7,23 @@
         <div class="grid_rabota">
             <div class="rab1" >
                 <img :src="imgs[0].i">
+                <p>{{ imgs[0].txt }}</p>
             </div>
+
             <div class="rab2" >
-                <img :src="imgs[1].i">
-                <img :src="imgs[2].i">
+                <div class="rab2_1" >
+                    <img :src="imgs[1].i">
+                    <p>{{ imgs[1].txt }}</p>
+                </div>
+                <div class="rab2_2">
+                    <img :src="imgs[2].i">
+                    <p>{{ imgs[2].txt }}</p>
+                </div>
             </div>
+
             <div class="rab3" >
                 <img :src="imgs[3].i">
+                <p>{{ imgs[3].txt }}</p>
             </div>
         </div>
 
@@ -48,12 +58,15 @@ export default {
 <style scoped>
 .rabotapoobject2{
     font-family: Montserrat, sans-serif;
-    background-color: rgb(212, 212, 212); 
+    background-color: rgb(255, 255, 255); 
     color: rgb(0, 0, 0);
     display: grid; justify-content: center;
     text-align: center;
     width: 100%;
-    grid-template-columns: 80%;
+    grid-template-columns: 60%;
+}
+h1{
+    
 }
 
 .grid_rabota{
@@ -85,19 +98,38 @@ export default {
     width: 100%; display: flex; justify-content: center;align-items: center;
     margin: 0 auto;
     z-index: 1; padding: 2px; gap: 4px;
-    overflow: hidden;
+    overflow: hidden;   
+}
+.rab2_1{
+    position: relative; display: flex;justify-content: center;align-items: center;
+    padding: 2px; gap: 4px;
+    z-index: 1;
+}
+.rab2_2{
+    position: relative; display: flex;justify-content: center;align-items: center;
+    padding: 2px; gap: 4px;
+    z-index: 1;
+}
+
+.grid_rabota p{
+    position: absolute;z-index: 3; color: white;
+    top: 50%; 
+    left: 50%; transform: translateX(-50%);
+    margin: 0 auto;
+    font-weight: 600; font-size: 18px;
 }
 
 
-/* .rab1::after, .rab2::after, .rab3::after {
+.rab1::after, .rab2_1::after, .rab3::after, .rab2_2::after {
     content: '';
     position: absolute;
-    top: 0;left: 0;
-    width: 100%;height: 100%;
+    top: 2px;left: 0;
+    width: calc(100% - 2px);height: calc(100% - 2px);
+    border-radius: 15px;
     z-index: 0;
-    background-color: rgba(2, 3, 4, 0.636);
-    padding: 10px
+    background-image:linear-gradient(to top,rgba(2, 3, 4, 0.748)20%, rgba(2, 3, 4, 0.288)60%) ;
     
     
-} */
+    
+}
 </style>

@@ -73,15 +73,26 @@ justify-content: center;align-items: center; margin: 0 auto; justify-items: cent
     display: flex;flex-wrap: wrap ; justify-content: center;align-items: center;
     overflow: hidden; width: 100%; position: relative;
     font-family: Montserrat, sans-serif; font-weight: 500;
-    background-color: rgb(212, 212, 212); 
+    background-color: rgb(255, 255, 255); 
 }
 .divkont{
-    display: flex; position: relative; overflow: hidden;
-    
+    display: flex; position: relative; overflow: hidden;z-index: 0;
 }
+.divkont::after{
+  content: ''; position: absolute; z-index: 1;
+  width:calc(100% - 10px);height: calc(100% - 10px);
+  top: 5px;left: 5px; 
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.049)0%, rgba(0, 0, 0, 0.625)90%) ;
+  transition: transform 0.6s ease;
+}
+.divkont:hover::after{
+  transform: scale(1.05);
+}
+
+
 .divkont img{
     display: flex;
-    width: 100%; height: 350px; object-fit:fill;
+    width: 100%; height: 350px; object-fit:cover ; 
     padding: 5px;
     min-width: 150px; /* или выставить минимальную ширину, чтобы элементы не переносились */
     position: relative;
@@ -113,10 +124,12 @@ justify-content: center;align-items: center; margin: 0 auto; justify-items: cent
     font-size: 25px;
     text-align: center;
     transition: transform 0.6s ease; 
-    background-image:linear-gradient(to top, rgba(2, 2, 2, 0.734)0%, rgba(0, 0, 0, 0.049) 80%); 
-    width: 100%; height: 100%;
-    
+    /* background-image:linear-gradient(to top, rgba(2, 2, 2, 0.734)0%, rgba(0, 0, 0, 0.049) 80%);  */
+    width: 100%; height: 100%; 
 }
+
+
+
 .pForImg::first-letter {
   text-transform: uppercase;
 }

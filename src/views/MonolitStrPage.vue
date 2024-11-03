@@ -18,6 +18,7 @@
         <RabotaPoObjectAnother
         :imgs="imgitems"
         ></RabotaPoObjectAnother>
+        <VseNashiUslugiDiv></VseNashiUslugiDiv>
         <BottomSvyaz></BottomSvyaz>
         <FooterDivSite></FooterDivSite>  
       </div>
@@ -30,6 +31,7 @@ import BottomSvyaz from '@/components/BottomSvyaz.vue';
 import FooterDivSite from '@/components/FooterDivSite.vue';
 import ContentUslForPage from '@/components/uslugi/ContentUslForPage.vue';
 import RabotaPoObjectAnother from '@/components/RabotaPoObjectAnother.vue';
+import VseNashiUslugiDiv from '@/components/VseNashiUslugiDiv.vue';
 
 
 
@@ -41,7 +43,8 @@ export default {
     BottomSvyaz,
     FooterDivSite,
     ContentUslForPage,
-    RabotaPoObjectAnother
+    RabotaPoObjectAnother,
+    VseNashiUslugiDiv
 
   },
   data(){
@@ -59,14 +62,15 @@ export default {
         {img: require('@/assets/img/obj_2_1_orig.jpg')},
       ],
       imgitems:[
-        {i: require('@/assets/img/30258560060511319_bf8c.jpg')},
-        {i: require('@/assets/img/XXL.webp')},
-        {i: require('@/assets/img/1633712701_101-p-stroika-domovgrafii-foto-116.jpg')},
-        {i: require('@/assets/img/12ce27767fcb0d3def29627cafdcf9c5.jpg')},
+        {i: require('@/assets/img/30258560060511319_bf8c.jpg'), txt: 'Жилые комплексы'},
+        {i: require('@/assets/img/XXL.webp'),  txt: 'Промышленные объекты'},
+        {i: require('@/assets/img/1633712701_101-p-stroika-domovgrafii-foto-116.jpg'), txt: 'Коттеджные посёлки'},
+        {i: require('@/assets/img/12ce27767fcb0d3def29627cafdcf9c5.jpg'),  txt: 'Коммерческие объекты'},
       ],
 
       CUFPstylemon:{
-        width: '100%',gap: '20px'
+        width: '80%',gap: '10px',
+        padding: '20px',
       },
       McontMonolit:{
         flex: "1 1 300px",
@@ -74,7 +78,8 @@ export default {
         
       },
       divcontCUFPmon:{
-        width: '100%'
+        width: '100%',
+        height: '300px', 
         
       },
       customStyle:{
@@ -83,7 +88,8 @@ export default {
         padding: '5px', minHeight: '200px',
         minWidth: '200px',
         marginTop: '20px',
-        width: '300px'
+        width: '300px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19)',
       },
       divVmestoimgtxt2mon:{
         color: 'black',

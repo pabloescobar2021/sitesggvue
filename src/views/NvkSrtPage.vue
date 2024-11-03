@@ -4,11 +4,13 @@
 
         <ContentUslForPage 
         :items="parentItems"
+        
         ></ContentUslForPage>
-        <RabotaPoObject></RabotaPoObject>
-        <AfterUslugiDiv
+        <AfterUslugiDiv style="display: none;"
         :items2="afteruslfuv"
         ></AfterUslugiDiv>
+        <RabotaPoObject></RabotaPoObject>
+        <VseNashiUslugiDiv></VseNashiUslugiDiv>
         <BottomSvyaz></BottomSvyaz>
         <FooterDivSite></FooterDivSite>  
       </div>
@@ -21,6 +23,8 @@ import BottomSvyaz from '@/components/BottomSvyaz.vue';
 import FooterDivSite from '@/components/FooterDivSite.vue';
 import ContentUslForPage from '@/components/uslugi/ContentUslForPage.vue';
 import AfterUslugiDiv from '@/components/uslugi/AfterUslugiDiv.vue';
+import VseNashiUslugiDiv from '@/components/VseNashiUslugiDiv.vue';
+
 
 
 
@@ -33,6 +37,7 @@ export default {
     FooterDivSite,
     ContentUslForPage,
     AfterUslugiDiv,
+    VseNashiUslugiDiv
 
   },
   data(){

@@ -225,7 +225,7 @@ import ModalOknoOtravit from './ModalOknoOtravit.vue';
 }
 
 .menu_cont{
-  display: flex;  z-index: 10;
+  display: flex;  z-index: 9999;
   position: fixed; color: white;
   background-color: black;
   width: 150px;

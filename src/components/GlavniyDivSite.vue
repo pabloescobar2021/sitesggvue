@@ -5,7 +5,7 @@
         <div class=" backgr_blur  " :style="backgroundStyle"></div>
 
         <div class="divP_h2 " >
-        <h2 style="">Инженерно строительная компания ССГ</h2> 
+        <h2 style="">Инженерно-строительная компания ССГ</h2> 
         <p style="color: white; " >Россия - Большое Сочи</p>
         
         </div>
@@ -47,9 +47,9 @@ export default {
             ],
 
             images:[
-                require('../assets/img/chad_1ec816f8fbf744c8b3bb59da730e4274.png'),
+                require('../assets/img/firstimg.webp'),
                 require('../assets/img/canstockphoto3333605.jpg'),
-                require('../assets/img/chad_036c16b6f4f8456193f54b3e9c5832f9.png'),
+                require('../assets/img/11123.jpg'),
                 require('../assets/img/shutterstock_226824577.webp'),
             ],
             currentImageIndex: 0,
@@ -130,13 +130,13 @@ export default {
     width: 100%; 
 }
 .divP_h2 h2{
-    font-size: 30px; color: white; height: 15px;margin-top: 100px;
+    font-size: 30px; color: white; height: auto;margin-top: 100px;
 }
 .grid_cont{
     display: grid; justify-content: center;align-items: center; margin: 0 auto;justify-items:center; margin-top: 50px;
-    width: 40%;
+    width: 20%;
     grid-template-columns: 1fr 1fr;  grid-template-rows: auto auto;
-    gap: 10px; 
+    gap: 20px; 
 }
 .grid_item{
   background-color: #f0f0f0b3; /* Светлый фон для элементов */
@@ -194,7 +194,7 @@ export default {
         height: 700px;
     }
     .divP_h2 p {
-        margin-top: 100px;
+        margin-top: 20px;
     }
 }
 </style>

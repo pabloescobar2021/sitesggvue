@@ -25,4 +25,10 @@ export default {
 #app{
   /* background-color: rgb(212, 212, 212); */
 }
+
+h2{
+  margin: 0;
+  display: flex;
+  margin: 0 auto;
+}
 </style>

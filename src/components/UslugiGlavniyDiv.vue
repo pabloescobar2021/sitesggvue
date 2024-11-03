@@ -150,12 +150,15 @@
 
     .divP_h2{
         display: flex; justify-content: center;align-items: center; text-align: center; flex-flow: column;
-        width: 100%; margin-top: 10%; z-index: 2;
+        width: 100%; margin-top: 5%; z-index: 2;
     }
     .h2title{
-        font-size: 30px; color: white; height: 15px;
+        font-size: 30px; color: white; height: auto; text-align: center;
         display: flex;justify-content:center; align-items: center;
        
+    }
+    .divP_h2 p{
+        
     }
     .grid_cont{
         display: flex; justify-content: center;align-items: center; margin: 0 auto;justify-items:center; margin-top: 50px;
@@ -173,7 +176,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 200px; height: 50px;
+      min-width: 150px; height: 50px;
     }
     .icon{
       margin-right: 10px; /* Отступ между изображением и текстом */

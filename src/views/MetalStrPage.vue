@@ -28,6 +28,7 @@
       </div>
 
         <RabotaPoObject></RabotaPoObject>
+        <VseNashiUslugiDiv></VseNashiUslugiDiv>
         <AfterUslugiDiv
         :items2="afteruslfuv"
         ></AfterUslugiDiv>
@@ -43,6 +44,7 @@ import BottomSvyaz from '@/components/BottomSvyaz.vue';
 import FooterDivSite from '@/components/FooterDivSite.vue';
 import ContentUslForPage from '@/components/uslugi/ContentUslForPage.vue';
 import AfterUslugiDiv from '@/components/uslugi/AfterUslugiDiv.vue';
+import VseNashiUslugiDiv from '@/components/VseNashiUslugiDiv.vue';
 
 
 
@@ -55,6 +57,7 @@ export default {
     FooterDivSite,
     ContentUslForPage,
     AfterUslugiDiv,
+    VseNashiUslugiDiv,
 
   },
   data(){

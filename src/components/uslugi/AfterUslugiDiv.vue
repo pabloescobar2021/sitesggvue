@@ -1,16 +1,17 @@
 <template>
-    <div class="all">
-        <div class="all2">
+    <div class="allafter">
+
             <h2>Почему стоит выбрать именно Нас:</h2>
+            
             <div v-for="(item,index) in items2"
             :key="index"
+            class="afterusl1"
             >
-                <div class="grid" >
+                <div class="afterusl2" >
                     <div class="t1">{{ item.t1 }}</div>
-                    <div class="t2">{{ item.t2 }}</div>
+                    <!-- <div class="t2">{{ item.t2 }}</div> -->
                 </div>
             </div>
-        </div>
     </div>
 </template>
 
@@ -32,53 +33,62 @@ export default {
 </script>
 
 <style scoped>
-.all{
+.allafter{
     font-family: Montserrat, sans-serif; 
     margin: 0 auto;
-    position: relative; 
-    display:flow-root; flex-flow: column;
-    width: 100%;
-    background-color: rgb(212 212 212);
-    background-image: linear-gradient(to top, 
-    rgb(212 212 212)0%, 
-    rgba(227, 192, 126, 0.514) 35%, 
-    rgba(223, 166, 59, 0.419) 80%  );
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Промежуток между элементами */
+    
 }
 
 
-h2{
-    display: flex;justify-content: center;text-align: center;
-    font-size: 30px;
+.allafter h2{
+    font-size: 24px;
+    color: #333;
+    width: 100%; /* Заголовок занимает всю строку */
+    margin-bottom: 20px;
+    justify-content: center; align-items: center
     
 }
-.grid{
-    display: grid;justify-content: center;align-items: center;margin: 0 auto;
-    grid-template-columns: 1fr;
-    width: 80%;
-    
-}
-.grid div{
-    display: flex;justify-content: center;align-items: center;
+.afterusl1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
-    font-size: 17px;
-    
-
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.401);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 30%; /* Блоки занимают примерно 30% от ширины контейнера */
+    min-width: 150px; /* Минимальная ширина для адаптивности */
+    max-width: 250px; /* Максимальная ширина для выравнивания */
+    margin: 0 auto;
+}
+.afterusl1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.afterusl2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .t1{ 
-    display: flex;
-    text-align: center;
-    height: 30px;
-    font-weight: 600;
-    width: 100%;
+    font-size: 18px;
+    color: #555;
+    font-weight: 500;
+    padding: 10px;
 }
 .t2{
-    display: flex;
-    text-align: center;
-    font-weight: 400;
-    width: 100%;
-    margin-bottom: 10px;
-    background-color: beige;
-    border-radius: 10px;
+    
 }
 
 

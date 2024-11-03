@@ -4,6 +4,7 @@
 
         <ContentUslForPage :items="parentItems"></ContentUslForPage>
         <RabotaPoObject></RabotaPoObject>
+        <VseNashiUslugiDiv></VseNashiUslugiDiv>
         <BottomSvyaz></BottomSvyaz>
         <FooterDivSite></FooterDivSite>  
       </div>
@@ -15,6 +16,7 @@ import RabotaPoObject from '@/components/RabotaPoObject.vue';
 import BottomSvyaz from '@/components/BottomSvyaz.vue';
 import FooterDivSite from '@/components/FooterDivSite.vue';
 import ContentUslForPage from '@/components/uslugi/ContentUslForPage.vue';
+import VseNashiUslugiDiv from '@/components/VseNashiUslugiDiv.vue';
 
 
 
@@ -26,6 +28,7 @@ export default {
     BottomSvyaz,
     FooterDivSite,
     ContentUslForPage,
+    VseNashiUslugiDiv
 
   },
   data(){

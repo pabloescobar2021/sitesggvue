@@ -40,7 +40,7 @@ export default {
 h1{
     font-size: 35px;
     font-family: Montserrat, sans-serif;
-    background-color: rgb(212, 212, 212); 
+    background-color: rgb(255, 255, 255); 
     margin: 0; padding: 20px; color: rgb(0, 0, 0);
     display: flex; justify-content: center;
     text-align: center;

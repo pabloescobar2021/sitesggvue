@@ -3,7 +3,7 @@
 
     <div class="Mcont" v-for="(item,index) in items" 
     :key="index"
-    :style="[{ flex: IsWrap ? '1 1 30%' : '1 1 100%'}, Mcontcustomstyle]"
+    :style="[ Mcontcustomstyle, ]"
     >
         <div class="divcontCUFP" :style="divcontCUFP"
         :class="[{ 'special-style': isEven && index === items.length - 1 },
@@ -158,7 +158,7 @@ export default {
     position: relative; 
     display: flex; flex-wrap: wrap;
     width: 100%;
-    background-color: rgb(212 212 212);
+    background-color: rgb(255, 255, 255);
 }
 .Mcont{
     display: flex;flex: 1 1 30%;
@@ -265,6 +265,7 @@ export default {
     min-height: 100px;
     border-radius: 10px;
     width: 100%;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2), 0 6px 10px rgba(0, 0, 0, 0.19);
 }
 .tasd{
     display: flex;flex: 1 1 100%; justify-content: center;align-items: center;
@@ -315,21 +316,27 @@ export default {
 .contIfNeeded_main{
     display: flex;justify-content: center; align-items: center;
     flex-wrap: wrap;
-    background-color: #d4d4d4;
+    background-color: #ffffff;
+    width: 60%;margin: 0 auto;
     
 }
 .contIfNeeded_div{
     display: flex;justify-content: center; align-items: center;
+    margin: 0 auto;
     width: 100%; 
-    margin-top: 50px;
     padding: 10px;
-    flex: 1 1 30%;
+    flex: 1 1 40%;
+}
+.contIfNeeded_div:last-child img{
+    width: 50%; 
 }
 .contIfNeeded_img{
-    display: flex;justify-content: center;flex: 1 1 50%;
-    width: 100%; height: 300px;object-fit: cover;
+    display: flex;justify-content: center;
+    width: 100%; height: 200px;object-fit: cover;
     transition: transform 0.3s ease;
     pointer-events:fill;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
 .contIfNeeded_img:hover{
     transform: scale(0.98);
