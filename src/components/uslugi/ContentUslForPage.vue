@@ -299,14 +299,7 @@ export default {
 
 
 
-@media (max-width:800px){
-    .Mcont{
-        flex: 1 1 100%
-    }
-    .txtCUFP{
-        font-size: 25px;
-    }
-}
+
 
 
 
@@ -344,7 +337,17 @@ export default {
 
 
 
-
+@media (max-width:800px){
+    .Mcont{
+        flex: 1 1 100%
+    }
+    .txtCUFP{
+        font-size: 25px;
+    }
+    .contIfNeeded_div:last-child img{
+    width: 100%; 
+}
+}
 
 
 

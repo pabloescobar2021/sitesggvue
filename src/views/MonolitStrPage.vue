@@ -86,6 +86,7 @@ export default {
         backgroundColor: 'white', borderRadius: '15px', 
         flexWrap: 'wrap', 
         padding: '5px', minHeight: '200px',
+        height: 'auto',
         minWidth: '200px',
         marginTop: '20px',
         width: '300px',

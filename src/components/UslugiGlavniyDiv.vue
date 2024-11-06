@@ -56,9 +56,9 @@
                 ],
     
                 images:[
-                    require('../assets/img/chad_1ec816f8fbf744c8b3bb59da730e4274.png'),
+                    require('../assets/img/firstimg.webp'),
                     require('../assets/img/canstockphoto3333605.jpg'),
-                    require('../assets/img/chad_036c16b6f4f8456193f54b3e9c5832f9.png'),
+                    require('../assets/img/11123.jpg'),
                     require('../assets/img/shutterstock_226824577.webp'),
                 ],
                 currentImageIndex: 0,
@@ -72,7 +72,6 @@
             backgroundStyle(){
                 return{
                     backgroundImage: `url(${this.images[this.currentImageIndex]})`, 
-                    transition: 'background-image 2s ease-in-out',
                     
                 };
             }
@@ -136,8 +135,9 @@
         animation: gradientmove 100s ease infinite;  
         width: 100%;
         max-height: 1000px;
-        background-size: 120% 200%;
-        background-position: center;background-repeat: no-repeat; 
+        background-size: 120% 170%;
+        background-position: center;
+        background-repeat: no-repeat;
     }
     .underbackgr{
         position: absolute;
@@ -255,6 +255,7 @@
         }
         .backgr_blur{
             height: 700px; 
+            background-size: 250% 200%;
         }
     }
     </style>

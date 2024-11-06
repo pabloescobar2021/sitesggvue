@@ -2,7 +2,7 @@
 <div class="div_modal">
     <div class="content_modal">
         
-        <a :key="count"  class="a_but"  @click="$emit('close2')" >Крест</a>
+        <a :key="count"  class="a_but"  @click="$emit('close2')" >✖</a>
         <p class="p_txt">Заказать консультацию</p>
         <div class="div_mes">
             <input v-model="FormData.name" class="inputtxt" type="text" placeholder="Как к вам обращаться">
@@ -98,8 +98,9 @@ export default {
 .a_but{
     display: flex; position: absolute;
     justify-content: center; align-items: center;
-    right: 5px;top: 5px;
+    right: 10px;top: 5px;
     cursor: pointer;z-index: 232323;
+    font-size: 20px;
 }
 .button{
     display: flex; position: absolute;
@@ -140,5 +141,17 @@ export default {
 }
 .v-enter-from, .v-leave-to {
     opacity: 0;
+}
+
+
+@media (max-width: 700px){
+    .content_modal{
+        width: 70%;
+    }
+}
+@media (max-width: 400px){
+    .content_modal{
+        width: 100%;
+    }
 }
 </style>
