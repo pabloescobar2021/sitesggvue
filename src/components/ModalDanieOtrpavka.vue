@@ -20,6 +20,8 @@
 </template>
 
 <script>
+// import axios from 'axios';
+
 export default {
     data(){
         return{
@@ -32,11 +34,12 @@ export default {
 
             message: '',
             polkond: '',
+            error: '',
         }
         
     },
     methods:{
-        Button_send(){
+        async Button_send(){
             if(this.FormData.name === "" || this.FormData.mail === "" || this.FormData.tel === ""){
                 this.message = "Введите данные"
             }
@@ -50,6 +53,7 @@ export default {
                 this.polkond = ""
             }
             if(this.message === "" && this.polkond === ""){
+               
                 console.log(this.FormData)
                 Object.keys(this.FormData).forEach(key =>{
                     this.FormData[key] = '';

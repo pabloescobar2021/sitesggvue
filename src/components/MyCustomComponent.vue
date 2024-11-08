@@ -110,8 +110,14 @@ import ModalOknoOtravit from './ModalOknoOtravit.vue';
       },
 
       scrollToSection(sectionId) {
-      EventBus.emit('scrollToSection', sectionId);
-
+        setTimeout(() => {
+          this.$router.push('/')
+        }, 100);
+        setTimeout(() => {
+          EventBus.emit('scrollToSection', sectionId)
+        }, 150);
+      
+      
       this.isMenuOpen = false;
       },
       closeFirstModal(){

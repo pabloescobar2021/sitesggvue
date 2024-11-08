@@ -1,8 +1,8 @@
 <template>
     <div class="all">
-        <div class="div_head" >
+        <div class="div_head" :style="backgr_blur">
     
-            <div class="backgr_blur " :style="backgroundStyle"></div>
+            <div class="backgr_blur " :style="[backgroundStyle, backgr_blur]"></div>
             <div class="underbackgr"></div>
     
             <div class="divP_h2 " >
@@ -11,17 +11,27 @@
             
             </div>
     
-            <div class="grid_cont">
+            <div v-if="IsbuttonSub"
+            class="grid_cont">
                 <div v-for="(item, index) in items" :key="index" class="grid_item">
                     <img :src="item.icon" alt="icon" class="icon" />
                     {{ item.text }} 
                 </div>
             </div>
     
-            <button class="submitbut" @click="Ismodal2 = !Ismodal2">Оставить заявку!</button>
+            <button v-if="IsbuttonSub"
+            class="submitbut" @click="Ismodal2 = !Ismodal2">Оставить заявку!</button>
             <ModalDanieOtrpavka v-if="Ismodal2" @close="closeFirstModal" @close2="Ismodal2 = false"></ModalDanieOtrpavka>
     
             <ModalOknoOtravit v-if="Ismodal3" @close="Ismodal3 = false"></ModalOknoOtravit>
+
+
+
+            <!-- Str O nas -->
+             <div class="Onastr"   >
+                <slot></slot>
+             </div>
+
         </div>
         <div class="underline" ></div>
     </div>
@@ -42,6 +52,14 @@
             title:{
                 type: String,
                 default: 'Заголовок',
+            },
+            IsbuttonSub:{
+                type: Boolean, 
+                default: true
+            },
+            backgr_blur:{
+                type: Object,
+                default: () => ({})
             }
         },
 
@@ -65,6 +83,8 @@
     
                 Ismodal2: false,
                 Ismodal3: false, 
+
+                
             }
             
         },
@@ -206,6 +226,15 @@
         width: 90%;height: 1px;
         background-color: red;
     }
+
+
+
+
+    .Onastr{
+        display: grid;justify-content: center;align-items: center;
+        color: white;
+        z-index: 2;
+    }
     
     
     @media(max-width:900px) {
@@ -241,10 +270,13 @@
     @media(max-width:500px){
         .divP_h2{
         display: flex; justify-content: center;align-items: center; text-align: center; flex-flow: column;
-        width: 100%; margin-top: 0;
+        width: 100%; margin-top: 0; font-size: 16px;
     }
         .divP_h2{
-            margin-top: 30%;
+            margin-top: 15%;
+        }
+        .h2title{
+            font-size: 25px;
         }
         .grid_item{
             font-size: 14px;
