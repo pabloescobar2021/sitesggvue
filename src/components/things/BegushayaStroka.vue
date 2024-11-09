@@ -50,7 +50,7 @@ export default {
     display: flex;
     justify-content: center ;align-items: center;
     margin: 0 auto;
-    width: 300%;
+    width: 100%;
     color: white;
     background-color: black;
     white-space: nowrap;
@@ -62,13 +62,13 @@ export default {
     justify-content: center;align-items: center;
     height: 50px;
     padding-right: 30px;
-    
     animation: begstrok 30s ease-in-out infinite;
+    transform: translateX(3000px);
     }
 
 @keyframes begstrok {
     0% {
-        transform: translateX(0px);
+        transform: translateX(1000px);
     }
     100% {
         transform: translateX(-1000px);
@@ -80,12 +80,12 @@ export default {
 
 @media (max-width:700px){
     .begStroka{
-        width: 3000px;
+       
     }
 }
 @media (max-width:400px){
     .begStroka{
-        width: 2500px;
+        
     }
 }
 </style>
