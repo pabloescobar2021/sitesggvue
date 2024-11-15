@@ -9,7 +9,7 @@
         <AfterUslugiDiv style="display: none;"
         :items2="afteruslfuv"
         ></AfterUslugiDiv>
-        <RabotaPoObject></RabotaPoObject>
+        <RabotaPoObject v-if="false"></RabotaPoObject>
         <VseNashiUslugiDiv></VseNashiUslugiDiv>
         <BottomSvyaz></BottomSvyaz>
         <FooterDivSite></FooterDivSite>  

@@ -3,7 +3,7 @@
         <UslugiGlavniyDiv title="Отопление, водоснабжение, водоотведение"></UslugiGlavniyDiv>
 
         <ContentUslForPage :items="parentItems"></ContentUslForPage>
-        <RabotaPoObject></RabotaPoObject>
+        <RabotaPoObject v-if="false"></RabotaPoObject>
         <VseNashiUslugiDiv></VseNashiUslugiDiv>
         <AfterUslugiDiv
         :items2="afteruslfuv"
@@ -59,7 +59,7 @@ export default {
                 'Установка насосных станций и резервуаров',
                 'Монтаж трубопроводов и сантехнических систем',
                 'Водоподготовка и фильтрация',
-                'Обслуживание водоснабжения'
+                'Системы пожаротушения'
           ]
         },
         {photo: require('@/assets/img/ffsssd.webp'), 

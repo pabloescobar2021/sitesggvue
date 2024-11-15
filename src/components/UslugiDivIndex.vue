@@ -5,7 +5,7 @@
         <div v-for="(item, index) in itemsWithButton" :key="index" class="grid_item" 
         @click="clickimage(index)"
         >
-          <div class="centered_text">{{ item.text }}</div>
+          <p class="centered_text">{{ item.text }}</p>
           <a class="button_podrob">{{ item.button_podrob }}</a>
           <img :src="item.img" alt="icon" class="icon" />
         </div>
@@ -20,11 +20,11 @@ import  EventBus  from '@/utils/eventBus';
     data() {
       return {
         items: [
-          { img: require('../assets/img/ji8b7ovh043ze48pv70nwh3b2sp6i90m.jpg'), text: 'НВК',  },
-          { img: require('../assets/img/article_2.jpg'), text: 'Отопление, водоснабжение и водоотведение' },
+          { img: require('../assets/img/tryba-pnd-v-otrezkah.jpg'), text: 'НВК',  },
+          { img: require('../assets/img/59e18e49a35a11efa193ae3507932d84.png'), text: 'Отопление, водоснабжение и водоотведение' },
           { img: require('../assets/img/zil-4.jpg'), text: 'Теплосети' },
-          { img: require('../assets/img/rab2.jpeg'), text: 'Кондиционирование, вентиляция, пожаротушение' },
-          { img: require('../assets/img/cec420337df211ef960f160f3f05b604-transformed.png'), text: 'ИЗготовление любых металл кострукций,' },
+          { img: require('../assets/img/rab2.jpeg'), text: 'Кондиционирование, вентиляция' },
+          { img: require('../assets/img/cec420337df211ef960f160f3f05b604-transformed.png'), text: 'Изготовление любых металлокострукций, сварка' },
           { img: require('../assets/img/MONOLIT.jpg'), text: 'монолитное строительно зданий' },
           { img: require('../assets/img/rab4.png'), text: 'кровельные работы  ' },
           { img: require('../assets/img/rabadas.jpg'), text: 'Электромонтажные работы' },
@@ -92,6 +92,9 @@ import  EventBus  from '@/utils/eventBus';
   .all1 {
     font-family: Arial, sans-serif;
     font-weight: 300;
+    position: relative;
+    z-index: 0;
+    
     
   }
   .div_cont{
@@ -119,7 +122,7 @@ import  EventBus  from '@/utils/eventBus';
     position: relative;
     object-fit: cover;
     transition: transform 0.3s ease;
-    filter: brightness(50%);
+    filter: brightness(80%);
   }
   .icon img {
     width: 100%; display: flex; 
@@ -129,9 +132,9 @@ import  EventBus  from '@/utils/eventBus';
   .centered_text {
    position: absolute; color: white; display: flex;
    align-items: center; justify-content: center; margin: 0 auto;justify-items: center;
-   z-index: 2;
+   z-index: 1;
    text-transform: uppercase;
-   font-size: 23px;
+   font-size: 25px;
    text-align: center;
    transition: transform 0.3s ease;
    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.719)0%, rgba(0, 0, 0, 0)50% ); 

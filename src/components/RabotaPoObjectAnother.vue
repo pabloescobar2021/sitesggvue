@@ -130,7 +130,7 @@ h1{
     width: calc(100% - 4px);height: calc(100% - 4px);
     border-radius: 15px;
     z-index: 0;
-    background-image:linear-gradient(to top,rgba(2, 3, 4, 0.748)20%, rgba(2, 3, 4, 0.288)60%) ;
+    background-image:linear-gradient(to top,rgba(2, 3, 4, 0.748)20%, rgba(2, 3, 4, 0)60%) ;
 }
 
 .grid_rabota .rab1:hover,

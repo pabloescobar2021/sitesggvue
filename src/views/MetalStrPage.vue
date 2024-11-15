@@ -27,7 +27,7 @@
         
       </div>
 
-        <RabotaPoObject></RabotaPoObject>
+        <RabotaPoObject v-if="false"></RabotaPoObject>
         <VseNashiUslugiDiv></VseNashiUslugiDiv>
         <AfterUslugiDiv
         :items2="afteruslfuv"

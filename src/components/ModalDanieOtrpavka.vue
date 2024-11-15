@@ -14,7 +14,7 @@
 
             <p class="p_error" v-if="message || polkond">{{ message }} <br> {{ polkond }}</p>
         </div>
-        <button class="button" @click="Button_send">Отправить</button>
+        <button class="button" @click="submitForm">Отправить</button>
     </div>
 </div>
 </template>
@@ -39,7 +39,7 @@ export default {
         
     },
     methods:{
-        async Button_send(){
+        async submitForm(){
             if(this.FormData.name === "" || this.FormData.mail === "" || this.FormData.tel === ""){
                 this.message = "Введите данные"
             }
@@ -53,7 +53,25 @@ export default {
                 this.polkond = ""
             }
             if(this.message === "" && this.polkond === ""){
+
+            try{
+                const formData = new FormData();
+                formData.append('name', this.FormData.name);
+                formData.append('email', this.FormData.mail);
+                formData.append('phone', this.FormData.tel);
+
+                const response = await fetch('https://ssg-n.ru//submit.php',{
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.text();
+                alert(result);
+            } catch (error){
+                console.error('Ошибка при отправке', error);
+            }
                
+
                 console.log(this.FormData)
                 Object.keys(this.FormData).forEach(key =>{
                     this.FormData[key] = '';
@@ -71,7 +89,7 @@ export default {
 <style scoped >
 .div_modal{
   position: fixed;
-  z-index: 99928;
+  z-index: 1999282323;
   top: 0;
   left: 0;
   width: 100%;
@@ -89,7 +107,7 @@ export default {
     background-color: rgba(255, 255, 255, 0.916);
     width: 50%; max-height: 500px; height: 400px;
     border-radius: 20px;
-    z-index: 232323;
+    z-index: 23232323;
 }
 .div_mes{
     display:flex; flex-flow: column;

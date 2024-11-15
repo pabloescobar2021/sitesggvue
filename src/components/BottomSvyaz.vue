@@ -70,7 +70,7 @@ export default {
         }
     },
    methods:{
-    submitForm() {
+    async submitForm() {
 
         this.message1 = !this.formData.name ? 'Пожалуйста, заполните это поле!' : '';
         this.message2 = !this.formData.email ? 'Пожалуйста, заполните это поле!' : '';
@@ -80,20 +80,37 @@ export default {
        const Errors = [this.message1, this.message2,this.message3, this.chekValue].some(msg => msg);
 
        if(!Errors) {
-        alert('Данные успешно отправлены')
-        console.log(this.formData);
+        // alert('Данные успешно отправлены')
+        // console.log(this.formData);
 
-        this.formData.name = '';
-            this.formData.email = '';
-            this.formData.phone = '';
-            this.checkbox = false;
+        // this.formData.name = '';
+        //     this.formData.email = '';
+        //     this.formData.phone = '';
+        //     this.checkbox = false;
 
-        this.message1 = '';
-        this.message2 = '';
-        this.message3 = '';
-        this.chekValue = '';
+        // this.message1 = '';
+        // this.message2 = '';
+        // this.message3 = '';
+        // this.chekValue = '';
 
-        this.Ismodal = true;
+        // this.Ismodal = true;
+
+        try{
+            const formData = new FormData();
+            formData.append('name', this.formData.name);
+            formData.append('email', this.formData.email);
+            formData.append('phone', this.formData.phone);
+
+            const response = await fetch('http://mishutvd.beget.tech/submit.php',{
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.text();
+            alert(result);
+        } catch (error){
+            console.error('Ошибка при отправке', error);
+        }
        }
 
       

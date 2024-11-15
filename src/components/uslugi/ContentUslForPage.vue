@@ -195,7 +195,7 @@ export default {
     position: relative;
     width: 100%; height: 300px;
     object-fit: cover;
-    filter: brightness(65%);
+    filter: brightness(80%);
     
     transition: transform 0.3s ease;
 }

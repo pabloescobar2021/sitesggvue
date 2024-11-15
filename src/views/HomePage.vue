@@ -1,10 +1,11 @@
 <template>
     <div>
       <GlavniyDivSite></GlavniyDivSite>
-      <UslugiDivIndex></UslugiDivIndex>
+      <UslugiDivIndex v-if="true" ></UslugiDivIndex>
       <RabotaPoObject></RabotaPoObject>
       <BottomSvyaz></BottomSvyaz>
-      <FooterDivSite></FooterDivSite>  
+      <FooterDivSite></FooterDivSite> 
+      
     </div>
   </template>
 
@@ -15,6 +16,7 @@ import RabotaPoObject from '@/components/RabotaPoObject.vue';
 import BottomSvyaz from '@/components/BottomSvyaz.vue';
 import FooterDivSite from '@/components/FooterDivSite.vue';
 
+
 export default {
   name: 'App',
   components: {
@@ -23,6 +25,7 @@ export default {
     RabotaPoObject,
     BottomSvyaz,
     FooterDivSite,
+    
 
   }
 }

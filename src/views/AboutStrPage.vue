@@ -158,4 +158,10 @@ export default {
         height: 30px;
     }
 }
+@media(max-width: 450px){
+    .divabout1{
+        display: flex;
+        height: 45px;
+    }
+}
 </style>

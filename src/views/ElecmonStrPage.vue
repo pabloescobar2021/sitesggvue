@@ -51,7 +51,7 @@ export default {
         {item:' И другие '},
       ],
       img:[
-        {img1: require('../assets/img/sdsdsd.jpg'), text1: 'Кафе и рестораны',
+        {img1: require('../assets/img/sdsdsd.jpg'), text1: 'Склады',
         img3: require('../assets/img/ob3.png'), text2: 'для цехов и производств',
         img2: require('../assets/img/ob2.png'), text3: 'для ТЦ и ТРК',
         img4: require('../assets/img/ob4.jpg'), text4: 'Для жилых домов',

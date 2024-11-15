@@ -1,9 +1,9 @@
 <template>
     <div>
-        <UslugiGlavniyDiv title="Кондиционирование, вентиляция, пожаротушение"></UslugiGlavniyDiv>
+        <UslugiGlavniyDiv title="Кондиционирование, вентиляция"></UslugiGlavniyDiv>
 
         <ContentUslForPage :items="parentItems"></ContentUslForPage>
-        <RabotaPoObject></RabotaPoObject>
+        <RabotaPoObject v-if="false"></RabotaPoObject>
         <VseNashiUslugiDiv></VseNashiUslugiDiv>
         <BottomSvyaz></BottomSvyaz>
         <FooterDivSite></FooterDivSite>  
@@ -38,8 +38,8 @@ export default {
         text: 'Кондиционирование'},
         {photo: require('@/assets/img/400612027f7911ef8c41e64959f934a7.png'), 
         text: 'Вентиляция'},
-        {photo: require('@/assets/img/8c1ea3a37f7911ef960f160f3f05b604.png'), 
-        text: 'Пожаротушение'},
+        // {photo: require('@/assets/img/8c1ea3a37f7911ef960f160f3f05b604.png'), 
+        // text: 'Пожаротушение'},
         
 
       ]
