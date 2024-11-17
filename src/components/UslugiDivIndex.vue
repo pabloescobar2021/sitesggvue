@@ -21,7 +21,7 @@ import  EventBus  from '@/utils/eventBus';
       return {
         items: [
           { img: require('../assets/img/tryba-pnd-v-otrezkah.jpg'), text: 'НВК',  },
-          { img: require('../assets/img/59e18e49a35a11efa193ae3507932d84.png'), text: 'Отопление, водоснабжение и водоотведение' },
+          { img: require('../assets/img/tr.png'), text: 'Отопление, водоснабжение и водоотведение' },
           { img: require('../assets/img/zil-4.jpg'), text: 'Теплосети' },
           { img: require('../assets/img/rab2.jpeg'), text: 'Кондиционирование, вентиляция' },
           { img: require('../assets/img/cec420337df211ef960f160f3f05b604-transformed.png'), text: 'Изготовление любых металлокострукций, сварка' },

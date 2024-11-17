@@ -36,6 +36,18 @@ export default {
     VseNashiUslugiDiv
 
   },
+  metaInfo: {
+    title: 'Теплосети - Сочи',
+    meta: [
+      {name: 'description',content: 'Работы по теплосетям '},
+      { name: 'keywords', content: 'инженерно-строительная компания, электромонтажные работы, отопление, водоснабжение, монтаж теплосетей, строительство' },
+      { property: 'og:title', content: 'Инженерно-строительная компания ССГ - Главная' },
+      { property: 'og:description', content: 'ССГ предлагает полный комплекс строительных и инженерных услуг для вашего бизнеса и дома.' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://ssg-n.ru/telp' },
+      { property: 'og:image', content: 'https://ssg-n.ru/telp/path/to/image.jpg' },
+    ]
+  },
   data(){
     return{
       parentItems:[

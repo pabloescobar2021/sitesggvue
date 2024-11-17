@@ -64,6 +64,14 @@ import ModalOknoOtravit from './ModalOknoOtravit.vue';
 
   export default {
     components:{ModalDanieOtrpavka, ModalOknoOtravit},
+    
+    metaInfo: {
+      title: 'Тестовая страница',
+      meta: [
+        { name: 'test-meta', content: 'Проверка работы vue-meta' }
+      ]
+    },
+
     data() {
       return {
        text:{
